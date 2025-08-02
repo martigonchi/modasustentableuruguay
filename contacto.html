@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container navbar">
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="#about">Acerca de nosotros</a>
+                <a href="#contact">Contactanos</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="sobre-nosotros-section beige-textured-section">
+            <div class="section-content sobre-nosotros-content">
+                <img src="img/sobrenosotros.png" alt="Sobre Nosotros" class="sobre-nosotros-image">
+                <div class="sobre-nosotros-text">
+                    <p>Somos un colectivo que cree que la sustentabilidad no se declara, se demuestra. Por eso creamos una herramienta que escanea páginas web, redes sociales y publicaciones de marcas de moda, y genera un análisis completo para saber si realmente se comprometen con el medio ambiente.</p>
+                    <p>Usamos inteligencia artificial, pero el ojo crítico lo ponemos entre todos. Nuestra misión es acercar información clara, sin filtros y sin verso, para que podamos elegir con conciencia y exigir con fundamentos.</p>
+                    <p>No vendemos verdades absolutas. Solo te daremos preguntas incómodas.</p>
+                </div>
+
+                <img src="img/contactanos.png" alt="Contactanos" class="contactanos-image" id="contact">
+                <form class="contact-form">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 [Tu Nombre de Empresa]. Todos los derechos reservados.</p>
+        <p>
+            <a href="#">Términos de Uso del Sitio</a> |
+            <a href="#">Política de Privacidad</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('https://fonts.gstatic.com/s/bebasneue/v10/JTUSjIg1_i6t8kCHKm45xWblzQ.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFF; /* Fondo blanco global */
+    color: #000;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para el contenido principal */
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: #A2B95C;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centrar los enlaces de navegación */
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; /* Espacio entre enlaces */
+}
+
+.nav-links a {
+    color: #FFF; /* Enlaces blancos */
+    text-decoration: none;
+    font-weight: bold; /* Texto en bold */
+    font-size: 1.2em; /* Tamaño de la fuente */
+}
+
+/* Main element for positioning context */
+main {
+    position: relative; /* Crucial para posicionar la bandera globalmente dentro de main */
+    padding-bottom: 0; /* ELIMINADO: Quita el espacio blanco extra al final del main */
+}
+
+/* Hero Section (Frame 1) - index.html */
+.hero-section {
+    min-height: 90vh; /* Ajusta la altura para que el blanco cubra la barra y un poco más */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinear arriba para las imágenes */
+    align-items: center;
+    text-align: center;
+    padding-bottom: 60px; /* Padding para separar del contenido inferior */
+    color: #000;
+    background-color: #FFF; /* Fondo blanco para esta sección */
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+    box-sizing: border-box; /* Incluir padding en el min-height */
+}
+
+.hero-image { /* Imagen de "Moda Sustentable?" */
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section p { /* Texto "Ingresá el link o el nombre de la marca..." */
+    font-size: 1.1em;
+    color: #000;
+    margin-top: 15px;
+    max-width: 600px;
+    font-weight: bold; /* Texto en bold */
+}
+
+/* ESTILOS PARA LA NUEVA BARRA DE BÚSQUEDA */
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0; /* Color de fondo similar al de la imagen */
+    border-radius: 25px; /* Bordes redondeados */
+    padding: 8px 15px;
+    width: 100%;
+    max-width: 600px; /* Ancho máximo para que no se extienda demasiado */
+    margin: 40px auto 50px auto; /* Margen superior e inferior y centrado */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+    box-sizing: border-box;
+}
+
+.search-bar-container .search-icon,
+.search-bar-container .mic-icon {
+    color: #888; /* Color de los iconos */
+    font-size: 18px;
+    margin: 0 10px; /* Espacio alrededor de los iconos */
+}
+
+.search-bar-container input[type="text"] {
+    flex-grow: 1; /* Permite que el input ocupe el espacio disponible */
+    border: none;
+    outline: none; /* Elimina el borde de enfoque al hacer clic */
+    background: transparent;
+    font-size: 16px;
+    padding: 0;
+    color: #000;
+}
+
+.search-bar-container input[type="text"]::placeholder {
+    color: #bbb; /* Color del placeholder */
+}
+
+/* Sabias que? Section - index.html - Diseño de 2 columnas con fondo beige y textura */
+.sabias-que-section-wrapper {
+    background-color: #F2F0EB; /* Color beige claro para el fondo */
+    position: relative;
+    z-index: 1;
+    padding: 80px 20px 20px; /* Mantenemos el padding superior/lateral, el inferior será flexible por min-height */
+    /* Aumentamos el min-height para que la sección beige abarque hasta donde la bandera lo requiere */
+    min-height: 600px; /* AJUSTAR: Este valor es CRÍTICO para que el beige llegue hasta abajo */
+    overflow: hidden; /* Crucial para que la bandera pueda "salir" de esta sección sin generar scrollbars */
+    box-sizing: border-box;
+}
+
+.sabias-que-section-wrapper::before { /* Aplica la textura sobre el fondo beige */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* La textura cubre toda la altura de la sección */
+    background-image: url('img/fondo.png'); /* Asegúrate que esta sea la imagen de textura beige transparente */
+    background-repeat: repeat;
+    opacity: 0.5; /* Opacidad de la textura */
+    z-index: -1; /* Envía la textura detrás del contenido */
+}
+
+.sabias-que-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    max-width: 1100px; /* Hacemos el grid más ancho */
+    margin: 0 auto;
+}
+
+.sabias-que-col-left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px; /* Le damos más espacio a la columna izquierda */
+    text-align: center;
+}
+
+.sabias-que-col-right {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px; /* Le damos más espacio a la columna derecha */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    padding-bottom: 0;
+}
+
+.sabias-que-image { /* Imagen "¿Sabías qué?" */
+    width: 100%;
+    max-width: 500px; /* La hacemos un poco más grande */
+    height: auto;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 3;
+}
+
+/* ESTILOS GLOBALES PARA LA IMAGEN DE LA BANDERA */
+.sabias-que-image-flag-global { /* Imagen del niño con la bandera, ahora global */
+    position: absolute; /* Posicionamiento absoluto respecto a <main> */
+    /* Ajusta este valor de 'bottom' para que se pegue al footer negro */
+    /* Prueba con 0px o un valor negativo pequeño si el footer tiene padding */
+    bottom: 0px; /* AJUSTAR: Debería ser 0 o un valor negativo muy pequeño */
+    /* Estos valores son CLAVE y deberás ajustarlos en tu navegador para el ajuste fino */
+    right: -100px; /* AJUSTAR: Ajusta este valor para la posición horizontal */
+    width: 100%; /* Permite que escale */
+    max-width: 800px; /* Ajusta el tamaño máximo de la bandera */
+    height: auto;
+    z-index: 5; /* Asegúrate de que esté por encima de todo el contenido de las secciones */
+    transform: scale(1.1); /* Mantén la escala si quieres */
+    transform-origin: bottom right; /* El origen de la transformación */
+    pointer-events: none; /* Permite que los clics "pasen a través" de la imagen */
+}
+
+.carousel-container {
+    margin-top: 30px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 550px; /* Ajusta el ancho para el carrusel */
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 0;
+    position: relative;
+    z-index: 1; /* Para que el texto esté encima de la bandera */
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    text-align: center;
+    color: #000;
+    font-size: 1.1em;
+    line-height: 1.6;
+    font-weight: bold; /* Texto en bold */
+}
+
+/* Greenwashing Section (Frame 5) - greenwashing.html */
+.greenwashing-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    /* CAMBIO: Fondo beige y propiedades de posicionamiento para la textura */
+    background-color: #F2F0EB; /* Color beige claro para el fondo */
+    position: relative; /* Necesario para que el pseudo-elemento ::before funcione */
+    z-index: 1; /* Necesario para que la textura no se superponga al contenido */
+    color: #000; /* CAMBIO: Color de texto a negro para que sea visible en fondo beige */
+    padding: 80px 20px;
+}
+
+/* CAMBIO: Añadir el pseudo-elemento para la textura granulada */
+.greenwashing-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/fondo.png'); /* Asegúrate que esta sea la imagen de textura beige transparente */
+    background-repeat: repeat;
+    opacity: 0.5; /* Opacidad de la textura */
+    z-index: -1; /* Envía la textura detrás del contenido */
+}
+
+.greenwashing-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.greenwashing-gif {
+    width: 100%;
+    max-width: 1500px; /* Duplicamos el max-width de 250px a 500px para que sea "100% más grande" */
+    height: auto;
+    margin-top: 30px;
+     margin-left: auto; /* CAMBIO: Empuja el GIF a la derecha */
+    margin-right: 0; /* Asegura que no haya margen a la derecha si lo había */
+}
+
+.analysis-box {
+    background-color: #777;
+    width: 80%;
+    max-width: 600px;
+    min-height: 200px;
+    margin-top: 40px;
+    padding: 25px;
+    border-radius: 10px;
+    color: #333; /* Color de texto del análisis */
+    font-size: 1em;
+    font-style: italic;
+    text-align: left;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.analysis-box p {
+    color: #f0f0f0; /* Color del texto dentro del analysis-box para que resalte en el fondo gris */
+    margin: 0;
+}
+
+
+
+
+/* Sobre Nosotros & Contactanos Section (Frame 6) - contacto.html */
+.sobre-nosotros-section {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    color: #000;
+    background-color: #F2F0EB;
+    position: relative;
+    z-index: 1;
+}
+
+.sobre-nosotros-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/fondo.png');
+    background-repeat: repeat;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.sobre-nosotros-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.sobre-nosotros-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.sobre-nosotros-text {
+    margin-top: 20px;
+    font-size: 1em;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.sobre-nosotros-text p {
+    margin-bottom: 20px;
+}
+
+.contactanos-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    min-height: 100px;
+}
+
+.contact-form button {
+    background-color: #A2B95C;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #8C9F4E;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+    position: relative; /* Mantener relative para z-index, si es necesario */
+    z-index: 10; /* Un z-index alto para el footer */
+}
+
+footer p {
+    margin: 3px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+/* Responsive Design (para pantallas más pequeñas) */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 15px;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        align-items: center;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .hero-image {
+        max-width: 90%;
+    }
+
+    .search-bar-container {
+        flex-direction: row;
+        padding: 8px 10px;
+        margin: 20px auto 30px auto;
+        max-width: 90%;
+    }
+
+    .search-bar-container input[type="text"] {
+        width: 100%;
+        padding: 0;
+        text-align: left;
+    }
+
+    .search-bar-container .search-icon,
+    .search-bar-container .mic-icon {
+        font-size: 16px;
+        margin: 0 5px;
+    }
+
+    main {
+        padding-bottom: 0; /* Eliminar padding en móvil también */
+    }
+
+    .sabias-que-section-wrapper {
+        padding-bottom: 50px; /* Ajusta el padding inferior para móvil si es necesario */
+        min-height: 400px; /* Ajusta la altura mínima para móvil */
+    }
+
+    .sabias-que-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sabias-que-col-left,
+    .sabias-que-col-right {
+        min-width: unset;
+        max-width: 100%;
+    }
+
+    .sabias-que-image {
+        max-width: 90%;
+    }
+
+    .sabias-que-image-flag-global {
+        max-width: 100%;
+        bottom: 0;
+        right: -30px; /* Ajusta si es necesario en móvil */
+        transform: scale(1);
+    }
+
+    .carousel-container {
+        max-width: 90%;
+    }
+
+    .analysis-box {
+        width: 90%;
+    }
+
+    .sobre-nosotros-content {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .sobre-nosotros-image,
+    .contactanos-image {
+        max-width: 90%;
+    }
+
+    .contact-form {
+        padding: 20px;
+        max-width: 90%;
+    }
+    /* Responsive Design (para pantallas más pequeñas) */
+@media (max-width: 768px) {
+    /* ... (tu CSS responsivo existente) ... */
+
+    .greenwashing-gif {
+        max-width: 90%; /* Ajuste para móvil, para que no sea excesivamente grande */
+    }
+
+    /* ... (el resto de tu CSS responsivo) ... */
+}
+}
